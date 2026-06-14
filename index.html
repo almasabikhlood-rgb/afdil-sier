@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أفضل سعر - محرك البحث والمقارنة</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="search-card">
+        
+        <div class="header-titles">
+            <h1>أفضل <span class="cyan-text">سعر</span></h1>
+            <p>محرك البحث والمقارنة الذكية لعطور صنعاء</p>
+        </div>
+
+        <form class="search-form" id="webhookForm">
+            
+            <div class="form-group">
+                <label>صورة العطر (إن وجدت)</label>
+                <input accept="image/*" id="perfumeImage" name="perfume_image" style="display: none;" type="file">
+                <div class="upload-area" id="uploadArea">
+                    <i class="fa-solid fa-camera"></i>
+                    <span id="uploadText">اضغط هنا لرفع صورة زجاجة العطر أو الكرتون</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>اسم العطر أو الماركة</label>
+                <input class="text-input" name="perfume_name" placeholder="مثال: سافاج ديور، بلو شانيل، كابتن..." required type="text">
+            </div>
+
+            <div class="form-group">
+                <label>النوع المطلوب</label>
+                <div class="options-grid grid-3">
+                    <label class="option-label">
+                        <input checked name="perfume_type" type="radio" value="أصلي وكالة">
+                        <div class="option-box">أصلي وكالة</div>
+                    </label>
+                    <label class="option-label">
+                        <input name="perfume_type" type="radio" value="تعبئة دبي">
+                        <div class="option-box">تعبئة دبي</div>
+                    </label>
+                    <label class="option-label">
+                        <input name="perfume_type" type="radio" value="تركيب محلي">
+                        <div class="option-box">تركيب محلي</div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>الحجم</label>
+                <div class="options-grid grid-2">
+                    <label class="option-label">
+                        <input checked name="perfume_size" type="radio" value="100 مل">
+                        <div class="option-box">100 مل (الكبير)</div>
+                    </label>
+                    <label class="option-label">
+                        <input name="perfume_size" type="radio" value="50 مل">
+                        <div class="option-box">50 مل (الوسط)</div>
+                    </label>
+                </div>
+            </div>
+
+            <button class="submit-btn" id="submitBtn" type="submit">
+                <span>ابحث عن أفضل سعر في صنعاء الآن</span>
+                <i class="fa-solid fa-magnifying-glass" style="font-size: 1.1rem; padding-right: 5px;"></i>
+            </button>
+
+        </form>
+
+        <div class="contact-section">
+            <h3 class="contact-title">للتواصل والاستفسار</h3>
+            <div class="contact-actions">
+                <a class="contact-btn" href="https://t.me/Azxfa" target="_blank">
+                    <i class="fa-brands fa-telegram" style="font-size: 1.2rem;"></i>
+                    تليجرام
+                </a>
+                <a class="contact-btn" href="mailto:information02022@gmail.com">
+                    <i class="fa-solid fa-envelope" style="font-size: 1.2rem;"></i>
+                    البريد الإلكتروني
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
