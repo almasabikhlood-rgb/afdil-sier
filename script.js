@@ -26,7 +26,7 @@ form.addEventListener('submit', function(e) {
     e.preventDefault(); // منع تحديث الصفحة
 
     // === ضع رابط الـ Webhook الخاص بك هنا ===
-    const webhookURL =  "https://fever-when-jonathan-telecommunications.trycloudflare.com/webhook/5bcf3cc8-91b9-4f14-b96b-44139f75ed94"; 
+    const webhookURL =  "http://localhost:5678/webhook/5bcf3cc8-91b9-4f14-b96b-44139f75ed94"; 
     
     // تغيير حالة الزر ليعرض للمستخدم أن الطلب قيد الإرسال
     const originalBtnContent = submitBtn.innerHTML;
