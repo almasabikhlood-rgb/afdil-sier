@@ -26,7 +26,7 @@ form.addEventListener('submit', function(e) {
     e.preventDefault(); // منع تحديث الصفحة
 
     // === ضع رابط الـ Webhook الخاص بك هنا ===
-    const webhookURL =  "https://fever-when-jonathan-telecommunications.trycloudflare.comhttp://localhost:5678/webhook-test/5bcf3cc8-91b9-4f14-b96b-44139f75ed94"; 
+    const webhookURL =  "https://info7.app.n8n.cloud/form/f251d4b1-d98c-4302-8def-f29ab76d79ad"; 
     
     // تغيير حالة الزر ليعرض للمستخدم أن الطلب قيد الإرسال
     const originalBtnContent = submitBtn.innerHTML;
