@@ -18,45 +18,48 @@ fileInput.addEventListener('change', function() {
     }
 });
 
-// 2. إرسال البيانات إلى الـ Webhook
+// 2. إرسال البيانات إلى الـ Webhook والتحويل التلقائي
 const form = document.getElementById('webhookForm');
 const submitBtn = document.getElementById('submitBtn');
 
 form.addEventListener('submit', function(e) {
-    e.preventDefault(); // منع تحديث الصفحة
+    e.preventDefault(); // منع تحديث الصفحة الافتراضي
 
-    // === ضع رابط الـ Webhook الخاص بك هنا ===
-    const webhookURL =  "https://info7.app.n8n.cloud/form/f251d4b1-d98c-4302-8def-f29ab76d79ad"; 
+    // === تم تعديل الرابط هنا ليكون Webhook مخصص لاستقبال البيانات برمجياً ===
+    const webhookURL = "https://info7.app.n8n.cloud/webhook/f251d4b1-d98c-4302-8def-f29ab76d79ad"; 
     
-    // تغيير حالة الزر ليعرض للمستخدم أن الطلب قيد الإرسال
+    // تغيير حالة الزر ليعرض للمستخدم أن الطلب قيد الإرسال والمعالجة
     const originalBtnContent = submitBtn.innerHTML;
-    submitBtn.innerHTML = 'جاري البحث... <i class="fa-solid fa-circle-notch fa-spin"></i>';
+    submitBtn.innerHTML = 'جاري البحث عن أفضل سعر... <i class="fa-solid fa-circle-notch fa-spin"></i>';
     submitBtn.disabled = true;
 
-    // جمع البيانات من النموذج (بما فيها الصورة)
+    // جمع البيانات من النموذج (بما فيها صورة العطر)
     const formData = new FormData(form);
 
-    // إرسال البيانات عبر Fetch API
+    // إرسال البيانات عبر Fetch API إلى n8n
     fetch(webhookURL, {
         method: 'POST',
         body: formData
     })
     .then(response => {
         if(response.ok) {
-            alert('تم الإرسال بنجاح! سيتم التواصل معك بأفضل سعر.');
-            form.reset(); // تفريغ الحقول
+            // تفريغ الحقول وإعادة تهيئة الواجهة خلف الكواليس
+            form.reset(); 
             uploadText.textContent = 'اضغط هنا لرفع صورة زجاجة العطر أو الكرتون';
             uploadArea.style.borderColor = 'var(--border-color)';
+
+            // التعديل الاحترافي: تحويل المستخدم تلقائياً فوراً إلى صفحة العروض على Vercel
+            window.location.href = "https://afdil-sier.vercel.app/";
         } else {
-            alert('حدث خطأ أثناء الإرسال. يرجى المحاولة لاحقاً.');
+            alert('حدث خطأ أثناء إرسال الطلب. يرجى المحاولة لاحقاً.');
         }
     })
     .catch(error => {
         console.error('Error:', error);
-        alert('فشل الاتصال بالخادم. تأكد من اتصالك بالإنترنت.');
+        alert('فشل الاتصال بالخادم. تأكد من إعدادات الـ Webhook واتصالك بالإنترنت.');
     })
     .finally(() => {
-        // إعادة الزر لحالته الطبيعية
+        // إعادة الزر لحالته الطبيعية في حال فشل الإرسال
         submitBtn.innerHTML = originalBtnContent;
         submitBtn.disabled = false;
     });
