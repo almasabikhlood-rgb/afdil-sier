@@ -26,7 +26,7 @@ form.addEventListener('submit', function(e) {
     e.preventDefault(); // منع تحديث الصفحة الافتراضي
 
     // === تم تعديل الرابط هنا ليكون Webhook مخصص لاستقبال البيانات برمجياً ===
-    const webhookURL = "https://info7.app.n8n.cloud/webhook/f251d4b1-d98c-4302-8def-f29ab76d79ad"; 
+    const webhookURL = "https://info7.app.n8n.cloud/form/f251d4b1-d98c-4302-8def-f29ab76d79ad"; 
     
     // تغيير حالة الزر ليعرض للمستخدم أن الطلب قيد الإرسال والمعالجة
     const originalBtnContent = submitBtn.innerHTML;
@@ -49,7 +49,7 @@ form.addEventListener('submit', function(e) {
             uploadArea.style.borderColor = 'var(--border-color)';
 
             // التعديل الاحترافي: تحويل المستخدم تلقائياً فوراً إلى صفحة العروض على Vercel
-            window.location.href = "https://afdil-sier.vercel.app/";
+            window.location.href = "https://afdal-sir-search.vercel.app/";
         } else {
             alert('حدث خطأ أثناء إرسال الطلب. يرجى المحاولة لاحقاً.');
         }
